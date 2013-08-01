@@ -1,4 +1,6 @@
 Explorer::Application.routes.draw do
+  get "market_data/index"
+  get "market_data/data"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
