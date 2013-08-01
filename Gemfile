@@ -58,3 +58,5 @@ gem 'factory_girl_rails'
 gem 'lazy_high_charts'
 
 gem 'guard-rspec'
+
+gem 'ember-rails'

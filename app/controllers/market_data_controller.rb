@@ -11,5 +11,9 @@ class MarketDataController < ApplicationController
   end
 
   def data
+    symbol = params[:symbol]
+    tstart = DateTime.parse params[:start]
+    tend = DateTime.parse params[:end]
+    respond_with @data = Market.srange(symbol, tstart, tend)
   end
 end
