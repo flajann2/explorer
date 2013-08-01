@@ -1,0 +1,5 @@
+<div id="container">
+     <h1>Explorer</h1>
+     {{view Ember.TextField valueBinding="testName"}}
+     {{testName}}
+</div>
