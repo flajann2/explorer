@@ -3,7 +3,11 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-gem 'mongoid'
+# gem 'mongoid', "~> 3.0.0"
+# Mongoid for Rails 4
+gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
+gem 'bson_ext'
+gem 'sqlite3' # why the fuck do we need this???
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -15,7 +19,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -52,3 +56,5 @@ gem 'factory_girl_rails'
 
 # HighCharts for lazy bastards.
 gem 'lazy_high_charts'
+
+gem 'guard-rspec'
