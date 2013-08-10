@@ -1,2 +1,6 @@
-%h1 Main#index
-%p Find me in app/views/main/index.html.haml
+%h1 Explorer of Tick Data
+.main-content
+  %script{type: 'text/x-handlebars'}
+    .navbar
+      = hb 'view Ember.TextField valueBinding="newEntry"'
+      = hb 'newEntry'

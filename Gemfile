@@ -62,3 +62,4 @@ gem 'guard-rspec'
 
 gem 'ember-rails'
 gem 'handlebars_assets'
+gem 'hamlbars'
