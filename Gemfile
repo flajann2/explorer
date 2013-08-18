@@ -60,6 +60,4 @@ gem 'lazy_high_charts'
 
 gem 'guard-rspec'
 
-gem 'ember-rails'
-gem 'handlebars_assets'
-gem 'hamlbars'
+gem 'angularjs-rails'
