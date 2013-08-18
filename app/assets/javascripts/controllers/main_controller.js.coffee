@@ -1,4 +1,3 @@
-Explorer.MainController = Ember.Controller.extend({
-
-})
-
+Explorer.MainController = Ember.Controller.extend
+  getAllSymbols: ->
+  
