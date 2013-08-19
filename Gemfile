@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-# gem 'mongoid', "~> 3.0.0"
 # Mongoid for Rails 4
 gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
 gem 'bson_ext'
@@ -61,3 +60,4 @@ gem 'lazy_high_charts'
 gem 'guard-rspec'
 
 gem 'angularjs-rails'
+
