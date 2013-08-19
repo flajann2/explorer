@@ -1,13 +1,15 @@
-@SymbolsCtrl = ($scope) ->
-  $scope.symlist = [
-    {name: "SPY"}
-    {name: "CSCO"}
-    {name: "@ES#"}
-    {name: "C"}
-    {name: "@ND#"}
-    {name: "VIX.O"}
-  ]
+app = angular.module("Explorer", ["ngResource"])
 
-@ChartCtrl = ($scope) ->
+app.factory "Symbols", ($resource) ->
+  $resource("/market_data/index")
+
+@SymbolsCtrl = ($scope, Symbols) ->
+  $scope.symlist = Symbols.query()
+
+  $scope.selectInstrument = (sy) ->
+    $scope.selected = sy
+
+@ChartCtrl = ($scope, $resource) ->
+  ChartData = $resource("/market_data/data")
   $scope.chart = [
   ]

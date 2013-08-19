@@ -7,7 +7,7 @@ class MarketDataController < ApplicationController
   end
 
   def index
-    respond_with @symbols = Symbols.list
+    respond_with @symbols = Symbols.list.map{|sy| {name: sy} }
   end
 
   def data
