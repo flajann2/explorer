@@ -7,7 +7,7 @@ app.factory "Symbols", ($resource) ->
   $scope.symlist = Symbols.query()
 
   $scope.selectInstrument = (sy) ->
-    $scope.selected = sy
+    $scope.sySelected.name = sy.name
 
 @ChartCtrl = ($scope, $resource) ->
   ChartData = $resource("/market_data/data")
