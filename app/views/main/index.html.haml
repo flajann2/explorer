@@ -3,7 +3,7 @@
   .symbols-selection{'ng-controller' => 'SymbolsCtrl'}
     %ul
       %li{'ng-repeat' => "sy in symlist"}
-        %button{'ng-click' => "selectInstrument({{sy}})"}
+        %button{'ng-click' => "selectInstrument(sy)", data: "{{sy}}"}
           {{sy.name}}
   {{sySelected.name}}
   .chart{'ng-controller' => 'ChartCtrl'}
