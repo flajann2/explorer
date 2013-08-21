@@ -3,10 +3,8 @@
   .symbols-selection{'ng-controller' => 'SymbolsCtrl'}
     %ul
       %li{'ng-repeat' => "sy in symlist"}
-        %button{'ng-click' => "selectInstrument(sy)", data: "{{sy}}"}
+        %button{'ng-click' => "selectInstrument(sy)", data: "{{sy}}", 'ng-model' => "sySelected.name"}
           {{sy.name}}
   {{sySelected.name}}
   .chart{'ng-controller' => 'ChartCtrl'}
-    %form
-      %input{type:'text', 'ng-model' => 'newEntry.name'}      
-      {{newEntry.name}}
+    = high_chart("my_id4", @chart)

@@ -15,5 +15,5 @@
 //= require jquery_ujs
 //= require angular
 //= require angular-resource
+//= require highcharts/highcharts                                         //= require highcharts/highcharts-more                                    //= require highcharts/highstock
 //= require_tree .
-
