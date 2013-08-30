@@ -13,7 +13,7 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'haml-rails'
 
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier', '>= 2.1.1' # was 1.3.0
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
@@ -55,7 +55,7 @@ gem 'capybara'
 gem 'factory_girl_rails'
 
 # HighCharts for lazy bastards.
-gem 'lazy_high_charts'
+gem 'highcharts-rails', "~> 3.0.3"
 
 gem 'guard-rspec'
 
