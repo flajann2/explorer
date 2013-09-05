@@ -14,13 +14,13 @@
 //= require jquery_ujs
 //= require angular
 //= require angular-resource
-//= require hcharts/highcharts.src.js
-//= require hcharts/highcharts-more.src.js
-//= require hcharts/modules/canvas-tools.src.js
-//= require hcharts/modules/data.src.js
-//= require hcharts/modules/exporting.src.js
-//= require hcharts/modules/funnel.src.js
-//= require hcharts/themes/dark-blue
+//= require hstocks/highstock.src.js
+//= require hstocks/highcharts-more.src.js
+//= require hstocks/modules/canvas-tools.src.js
+//= require hstocks/modules/data.src.js
+//= require hstocks/modules/exporting.src.js
+//= require hstocks/modules/funnel.src.js
+//= require hstocks/themes/dark-blue
 //= require_tree .
 
 
