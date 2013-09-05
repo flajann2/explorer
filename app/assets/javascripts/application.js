@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-// require turbolinks
 //= require angular
 //= require angular-resource
 //= require hcharts/highcharts.src.js
@@ -23,6 +22,7 @@
 //= require hcharts/modules/funnel.src.js
 //= require hcharts/themes/dark-blue
 //= require_tree .
+
 
 // require highcharts
 // require highcharts/highcharts-more
