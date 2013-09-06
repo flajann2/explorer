@@ -61,4 +61,6 @@ gem 'highcharts-rails', "~> 3.0.3"
 gem 'guard-rspec'
 
 gem 'angularjs-rails'
-
+gem 'twitter-bootstrap-rails'
+gem 'less-rails-bootstrap'
+gem 'simple_form'

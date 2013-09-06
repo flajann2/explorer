@@ -12,6 +12,9 @@ app.factory "ChartData", ($resource) ->
 
   $scope.selectInstrument = (sy) ->
     $scope.sySelected = sy
+    $scope.tickchart = $("#tickchart").highcharts()
+    $scope.tickchart.setTitle(text: sy.name)
+    
 
 @ChartCtrl = ($scope, ChartData) ->
   $scope.chart = [
