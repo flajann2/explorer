@@ -1,6 +1,5 @@
 $ ->
   $.getJSON "http://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?", (data) ->
-    
     # Create the chart
     $("#tickchart").highcharts "StockChart",
       rangeSelector:

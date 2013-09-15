@@ -13,6 +13,16 @@ class Market
   field :reserved2, type: String
   field :basic, type: String
   field :symbol, type: String
+  
+  # Returns the number of milliseconds since the epoch of the timestamp.
+  def epoch
+    (stamp.to_time.to_f * 1000).round
+  end
+
+  # Given the number of milliseconds since the epoch, set the timestamp.
+  def epoch=(i)
+    stamp = Time.at(i / 1000).to_datetime
+  end
 
   scope :sbefore, ->(sym, before) { where(symbol: sym, :stamp.lt => before) }
   scope :safter, ->(sym, after) { where(symbol: sym, :stamp.gte => after) }

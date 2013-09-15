@@ -11,9 +11,13 @@ class MarketDataController < ApplicationController
   end
 
   def data
-    symbol = params[:symbol]
-    tstart = DateTime.parse params[:start]
-    tend = DateTime.parse params[:end]
-    respond_with @data = Market.srange(symbol, tstart, tend)
+    respond_with @data = Market.srange(params[:symbol], 
+                                       e2dt(params[:start]), 
+                                       e2dt(params[:end]))
+  end
+
+  # convert millisecond epoch to a DateTime object
+  def e2dt(epoch)
+    Time.at(epoch.to_i / 1000).to_datetime 
   end
 end
