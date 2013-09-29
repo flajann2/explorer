@@ -1,15 +1,15 @@
 $ ->
-  $.getJSON "http://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?", (data) ->
+  $.getJSON "http://localhost:3000/market_data/data/SPY/1378381132361/1378384732361", (data) ->
     # Create the chart
     $("#tickchart").highcharts "StockChart",
       rangeSelector:
         selected: 2
 
       title:
-        text: "AAPL Stock Price"
+        text: "SPY tick data"
 
       series: [
-        name: "AAPL Stock Price"
+        name: "SPY"
         data: data
         lineWidth: 0
         marker:

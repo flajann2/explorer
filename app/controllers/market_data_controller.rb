@@ -13,7 +13,9 @@ class MarketDataController < ApplicationController
   def data
     respond_with @data = Market.srange(params[:symbol], 
                                        e2dt(params[:start]), 
-                                       e2dt(params[:end]))
+                                       e2dt(params[:end])).map { |tick|
+      [tick.epoch, tick.last]
+    }
   end
 
   # convert millisecond epoch to a DateTime object
