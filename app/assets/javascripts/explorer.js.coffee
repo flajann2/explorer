@@ -16,12 +16,21 @@ app.factory "ChartData", ($resource) ->
     $scope.tickchart.setTitle(text: sy.name)
     rnow = new Date()
     yest = new Date()
-    yest.setDate(rnow.getDate() - 1)
-    dataurl = "http://localhost:3000/market_data/data/" + sy.name \
+    yest.setDate(rnow.getDate() - 4)
+    dataurl = "http://localhost:3000/market_data/data/" + escape(sy.name) \
             + "/" + yest.getTime() + "/" + rnow.getTime()
     $.getJSON dataurl, (data) ->
-      $scope.tickchart.series.remove()
-      $scope.tickchart.addSeries({name: sy.name, data: data})
+      $scope.tickchart.series[0].remove()
+      $scope.tickchart.addSeries({
+            name: sy.name
+            data: data
+            lineWidth: 1
+            marker:
+              enabled: true
+              radius: 2
+            tooltip:
+              valueDecimals: 2
+        })
 
 @ChartCtrl = ($scope, ChartData) ->
   $scope.chart = [
