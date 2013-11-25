@@ -1,12 +1,16 @@
 $ ->
-  $.getJSON "http://localhost:3000/market_data/data/SPY/1378381132361/1378384732361", (data) ->
+  rnow = new Date()
+  yest = new Date()
+  yest.setTime(rnow.getTime() - 1000 * 60 * 60 * 24)
+  dataurl = dataURL('SPY', yest, rnow)  
+  $.getJSON dataURL, (data) ->
     # Create the chart
     $("#tickchart").highcharts "StockChart",
       rangeSelector:
         selected: 2
 
       title:
-        text: "SPY tick data"
+        text: "Click an instrument to get data."
 
       series: [
         name: "SPY"

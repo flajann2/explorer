@@ -6,6 +6,10 @@ app.factory "Symbols", ($resource) ->
 app.factory "ChartData", ($resource) ->
   $resource("/market_data/data")
 
+@dataURL = (symbol, tstart, tend) ->
+  return "http://localhost:3000/market_data/data/" + escape(symbol) \
+            + "/" + tstart.getTime() + "/" + tend.getTime()  
+
 @SymbolsCtrl = ($scope, Symbols) ->
   $scope.sySelected = {name: 'NONE'}
   $scope.symlist = Symbols.query()
@@ -16,9 +20,8 @@ app.factory "ChartData", ($resource) ->
     $scope.tickchart.setTitle(text: sy.name)
     rnow = new Date()
     yest = new Date()
-    yest.setDate(rnow.getDate() - 4)
-    dataurl = "http://localhost:3000/market_data/data/" + escape(sy.name) \
-            + "/" + yest.getTime() + "/" + rnow.getTime()
+    yest.setTime(rnow.getTime() - 1000 * 60 * 60 * 24)
+    dataurl = dataURL(sy.name, yest, rnow)
     $.getJSON dataurl, (data) ->
       $scope.tickchart.series[0].remove()
       $scope.tickchart.addSeries({
