@@ -1,7 +1,13 @@
 Explorer::Application.routes.draw do
-  get "main/index"
-  get "market_data/index"
+  resources :main
+
   get "market_data/data/:symbol/:start/:end", to: "market_data#data"
+  resources :market_data do
+    collection {
+      get :events
+      get :index
+    }
+  end
   root to: 'main#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

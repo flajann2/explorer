@@ -1,4 +1,6 @@
 class MarketDataController < ApplicationController
+  include ActionController::Live
+
   respond_to :json
   before_filter :default_to_json
 
@@ -21,5 +23,13 @@ class MarketDataController < ApplicationController
   # convert millisecond epoch to a DateTime object
   def e2dt(epoch)
     Time.at(epoch.to_i / 1000).to_datetime 
+  end
+
+  def events
+    3.times do |i|
+      response.stream.write i.to_json
+    end
+  ensure
+    response.stream.close
   end
 end

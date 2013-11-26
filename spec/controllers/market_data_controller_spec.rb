@@ -18,6 +18,11 @@ describe MarketDataController do
       get 'index'
       response.should be_success
     end
+
+    it "events should work" do
+      get 'events'
+      response.should be_success
+    end
   end
 
   describe "GET 'data'" do
